@@ -5,16 +5,9 @@ import { HousingLocation } from './housinglocation';
   providedIn: 'root'
 })
 export class HousingService {
-  readonly baseUrl = "https://angular.io/assets/images/tutorials/faa"
+  readonly baseUrl = 'https://angular.io/assets/images/tutorials/faa';
 
-  getAllHousingLocations(): HousingLocation[] {
-    return this.housingLocationList;
-  }
-  
-  getHousingLocationById(id: number): HousingLocation | undefined {
-    return this.housingLocationList.find(housingLocation => housingLocation.id === id);
-  }
-  housingLocationList: HousingLocation[] = [
+  protected housingLocationList: HousingLocation[] = [
     {
       id: 0,
       name: 'Acme Fresh Start Housing',
@@ -116,5 +109,23 @@ export class HousingService {
       laundry: true
     }
   ];
-  constructor() { }
+
+  getAllHousingLocations(): HousingLocation[] {
+    return this.housingLocationList;
+  }
+
+  getHousingLocationById(id: number): HousingLocation | undefined {
+    return this.housingLocationList.find(housingLocation => housingLocation.id === id);
+  }
+
+  submitApplication(firstName: string, lastName: string, email: string) {
+    console.log(`Homes application received: firstName: ${firstName}, lastName: ${lastName}, email: ${email}.`);
+  }
 }
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/

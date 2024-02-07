@@ -1,14 +1,15 @@
-import { Component, NgModule } from '@angular/core';
+import { Component } from '@angular/core';
 import { HomeComponent } from './home/home.component';
-
+import { RouterModule } from '@angular/router';
 @Component({
-  selector: 'app-root', // describe how Angular refers to the component in templates
-  standalone: true, // describe whether the component requires a NgModule 
+  selector: 'app-root',
+  standalone: true,
   imports: [
     HomeComponent,
-  ], // to describe the component's dependencies
+    RouterModule,
+  ],
   templateUrl: './app.component.html', // to describe the component's HTML markup and layout
-  styleUrls: ['./app.component.css'], // to list the URLs of the CSS files that the component uses in an array
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
   title = 'homes';
