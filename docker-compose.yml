@@ -1,0 +1,11 @@
+version: '3.7'
+services:
+  app: 
+    image: "l0g1g06/firstangularapp:latest"
+    network_mode: "host"
+    ports:
+      - "4201:4200"
+  db:
+    image: "l0g1g06/firstangularapp_db:latest"
+    ports:
+      - "3000:3000"
